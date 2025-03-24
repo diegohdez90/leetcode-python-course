@@ -1,2 +1,3 @@
 class LinkedList:
-    pass
+    head = None
+    tail = None

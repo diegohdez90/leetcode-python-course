@@ -8,3 +8,4 @@ class LinkedList:
         node = Node(value)
         self.head = node
         self.tail = node
+        self.length = 1

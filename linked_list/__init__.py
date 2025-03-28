@@ -9,6 +9,12 @@ class LinkedList:
         self.head = node
         self.tail = node
         self.length = 1
+        
+    def print_list(self):
+        tmp = self.head
+        while tmp is not None:
+            print(f'value: {tmp.value}')
+            tmp = tmp.pointer
 
 
 if __name__ == '__main__':

@@ -1,5 +1,5 @@
 from .. import LinkedList
-from ..log import log
+from log import log
 
 def test_linked_list_init_value():
     ll = LinkedList(6)

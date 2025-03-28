@@ -9,3 +9,9 @@ class LinkedList:
         self.head = node
         self.tail = node
         self.length = 1
+
+
+if __name__ == '__main__':
+    __all__ =  [
+        'LinkedList'
+    ]

@@ -9,6 +9,13 @@ class LinkedList:
         self.head = node
         self.tail = node
         self.length = 1
+    
+    def append(self, value):
+        node = Node(value)
+        tmp = self.tail
+        tmp.pointer = node
+        self.tail = node
+        self.length += 1
         
     def print_list(self):
         tmp = self.head

@@ -16,6 +16,14 @@ class test_linked_list(unittest.TestCase):
         self.assertEqual(ll.head.pointer.value, 16)
         self.assertEqual(ll.tail.value, 16)
         self.assertEqual(ll.length, 2)
+    
+    def test_pop(self):
+        ll = LinkedList(9)
+        item = ll.pop()
+        self.assertEqual(item.value, 9)
+        self.assertIsNone(ll.head)
+        self.assertIsNone(ll.tail)
+
 
 if __name__ == '__main__':
     unittest.main()

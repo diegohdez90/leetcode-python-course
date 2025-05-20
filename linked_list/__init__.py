@@ -24,18 +24,13 @@ class LinkedList:
     def pop(self):
         if self.length == 0:
             return None
-        if self.length == 2:
-            tmp = self.tail
-            self.head.pointer = None
-            self.tall = self.head
-        else:
-            tmp = self.head
-            prev = self.head
-            while tmp.pointer != None:
-                prev = tmp
-                tmp = tmp.pointer
-            self.tail = prev
-            self.tail.pointer = None
+        tmp = self.head
+        prev = self.head
+        while tmp.pointer:
+            prev = tmp
+            tmp = tmp.pointer
+        self.tail = prev
+        self.tail.pointer = None
         self.length -= 1
         if self.length == 0:
             self.head = None

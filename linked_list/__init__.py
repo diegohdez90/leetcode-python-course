@@ -36,6 +36,17 @@ class LinkedList:
             self.head = None
             self.tail = None
         return tmp
+    
+    def prepend(self, value):
+        node = Node(value)
+        if self.length == 0:
+            self.head = node
+            self.tail = node
+        else:
+            node.pointer = self.head
+            self.head = node
+        self.length += 1
+        return True
         
     def print_list(self):
         tmp = self.head

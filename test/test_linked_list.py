@@ -21,14 +21,41 @@ class test_linked_list(unittest.TestCase):
         ll = LinkedList(9)
         item = ll.pop()
         self.assertEqual(item.value, 9)
+        self.assertEqual(ll.length, 0)
         self.assertIsNone(ll.head)
         self.assertIsNone(ll.tail)
 
     def test_empty_pop(self):
         ll = LinkedList(8)
+        ll.append(13)
+        ll.append(6)
+        ll.append(10)
         tmp = ll.pop()
-        self.assertEqual(ll.length, 0)
-        self.assertEqual(tmp.value, 8)
+        self.assertEqual(ll.length, 3)
+        self.assertEqual(tmp.value, 10)
+        
+    def test_prepend(self):
+        ll = LinkedList(17)
+        ll.prepend(5)
+        self.assertEqual(ll.head.value, 5)
+        self.assertEqual(ll.tail.value, 17)
+        self.assertEqual(ll.length, 2)
+        
+        
+    def test_prepend_with_pop(self):
+        ll = LinkedList(8)
+        ll.append(13)
+        ll.append(6)
+        ll.append(10)
+        while(ll.head):
+            ll.pop()
+        
+        ll.prepend(4)
+        self.assertEqual(ll.head.value, 4)
+        self.assertEqual(ll.tail.value, 4)
+        self.assertEqual(ll.length, 1)
+        
+        
 
 if __name__ == '__main__':
     unittest.main()

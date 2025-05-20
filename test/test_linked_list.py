@@ -24,6 +24,11 @@ class test_linked_list(unittest.TestCase):
         self.assertIsNone(ll.head)
         self.assertIsNone(ll.tail)
 
+    def test_empty_pop(self):
+        ll = LinkedList(8)
+        tmp = ll.pop()
+        self.assertEqual(ll.length, 0)
+        self.assertEqual(tmp.value, 8)
 
 if __name__ == '__main__':
     unittest.main()

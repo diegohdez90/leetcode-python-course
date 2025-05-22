@@ -54,8 +54,25 @@ class test_linked_list(unittest.TestCase):
         self.assertEqual(ll.head.value, 4)
         self.assertEqual(ll.tail.value, 4)
         self.assertEqual(ll.length, 1)
-        
-        
+    
+    def test_pop_first(self):
+        ll = LinkedList(23)
+        tmp = ll.pop_first()
+        self.assertEqual(tmp.value, 23)
+        self.assertEqual(ll.length, 0)
+        self.assertIsNone(ll.head)
+        self.assertIsNone(ll.tail)
+    
+    def test_pop_first_with_values(self):
+        ll = LinkedList(5)
+        ll.append(15)
+        ll.append(7)
+        ll.append(9)
+        tmp = ll.pop_first()
+        self.assertEqual(tmp.value, 5)
+        self.assertEqual(ll.length, 3)
+        self.assertEqual(ll.head.value, 15)
+
 
 if __name__ == '__main__':
     unittest.main()

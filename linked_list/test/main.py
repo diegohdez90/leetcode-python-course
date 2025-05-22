@@ -47,14 +47,16 @@ def test_prepend():
     ll = LinkedList(4)
     ll.prepend(7)
     assert ll.tail.value == 4, "tail should be 4"
-    assert ll.head.value == 7, "tmp should be 7"
+    assert ll.head.value == 7, "head should be 7"
+    assert ll.length == 2, "length should be 2"
 
 def test_prepend_empty_ll():
     ll = LinkedList(4)
     _ = ll.pop()
     ll.prepend(8)
     assert ll.tail.value == 8, "tail should be 8"
-    assert ll.head.value == 8, "tmp should be 8"
+    assert ll.head.value == 8, "head should be 8"
+    assert ll.length == 1, "length should be 1"
 
 
 if __name__ == '__main__':

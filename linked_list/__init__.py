@@ -47,7 +47,18 @@ class LinkedList:
             self.head = node
         self.length += 1
         return True
-        
+    
+    def pop_first(self):
+        if self.length == 0:
+            return None
+        tmp = self.head
+        self.head = tmp.pointer
+        tmp.pointer = None
+        self.length -= 1
+        if self.length == 0:
+            self.tail = None
+        return tmp
+    
     def print_list(self):
         tmp = self.head
         while tmp is not None:

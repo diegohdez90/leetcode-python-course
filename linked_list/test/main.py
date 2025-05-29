@@ -58,6 +58,21 @@ def test_prepend_empty_ll():
     assert ll.head.value == 8, "head should be 8"
     assert ll.length == 1, "length should be 1"
 
+def test_get():
+    ll = LinkedList(7)
+    ll.append(1)
+    ll.append(4)
+    ll.append(9)
+    ll.append(14)
+    item = ll.get(2)
+    assert item.value == 4, "item should be 4"
+    item = ll.get(-1)
+    assert item == None, "item should be None"
+    item = ll.get(5)
+    assert item == None, "item should be None"
+    item = ll.get(4)
+    assert item.value == 14, "item should be 14"
+
 
 if __name__ == '__main__':
     test_linked_list_init_value()
@@ -66,4 +81,5 @@ if __name__ == '__main__':
     test_pop_linked_list_values()
     test_prepend()
     test_prepend_empty_ll()
+    test_get()
     log.info('Test passed')

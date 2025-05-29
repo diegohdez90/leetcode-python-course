@@ -73,6 +73,22 @@ class test_linked_list(unittest.TestCase):
         self.assertEqual(ll.length, 3)
         self.assertEqual(ll.head.value, 15)
 
-
+    def test_get(self):
+        ll = LinkedList(7)
+        ll.append(1)
+        ll.append(4)
+        ll.append(9)
+        ll.append(14)
+        
+        item = ll.get(2)
+        self.assertEqual(item.value, 4)
+        item = ll.get(-1)
+        self.assertIsNone(item)
+        item = ll.get(5)
+        self.assertIsNone(item)
+        item = ll.get(4)
+        self.assertEqual(item.value, 14)
+    
+    
 if __name__ == '__main__':
     unittest.main()

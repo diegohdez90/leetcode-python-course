@@ -58,6 +58,15 @@ class LinkedList:
         if self.length == 0:
             self.tail = None
         return tmp
+
+    def get(self, index):
+        if index < 0 or index >= self.length:
+            return None
+        tmp = self.head
+        for _ in range(index):
+            tmp = tmp.pointer
+        
+        return tmp
     
     def print_list(self):
         tmp = self.head

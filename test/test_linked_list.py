@@ -112,6 +112,36 @@ class test_linked_list(unittest.TestCase):
         self.assertTrue(result)
         node = ll.get(4)
         self.assertEqual(node.value, 7)
+    
+    def test_insert(self):
+        ll = LinkedList(7)
+        ll.append(2)
+        ll.append(15)
+        ll.append(8)
+        ll.append(12)
+        ll.append(4)
+        ll.append(9)
         
+        result = ll.insert(-1, 3)
+        self.assertFalse(result)
+        result = ll.insert(8, 14)
+        self.assertFalse(result)
+        result = ll.insert(7, 6)
+        self.assertTrue(result)
+        self.assertEqual(ll.tail.value, 6)
+        self.assertEqual(ll.length, 8)
+        
+        result = ll.insert(0, 5)
+        self.assertTrue(result)
+        self.assertEqual(ll.head.value, 5)
+        self.assertEqual(ll.length, 9)
+        
+        result = ll.insert(4, 11)
+        node = ll.get(4)
+        self.assertTrue(result)
+        self.assertEqual(node.value, 11)
+        self.assertEqual(ll.length, 10)
+    
+    
 if __name__ == '__main__':
     unittest.main()

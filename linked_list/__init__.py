@@ -68,6 +68,13 @@ class LinkedList:
         
         return tmp
     
+    def set(self, index, value):
+        tmp = self.get(index)
+        if tmp:
+            tmp.value = value
+            return True
+        return False
+    
     def print_list(self):
         tmp = self.head
         while tmp is not None:

@@ -20,6 +20,7 @@ class LinkedList:
             tmp.pointer = node
             self.tail = node
         self.length += 1
+        return True
     
     def pop(self):
         if self.length == 0:
@@ -74,6 +75,23 @@ class LinkedList:
             tmp.value = value
             return True
         return False
+    
+    def insert(self, index, value):
+        if index < 0 or index > self.length:
+            return False
+        
+        if index == 0:
+            return self.prepend(value)
+        if index == self.length:
+            return self.append(value)
+        
+        tmp = self.get(index - 1)
+        node = Node(value)
+        
+        node.pointer = tmp.pointer
+        tmp.pointer = node
+        self.length += 1
+        return True
     
     def print_list(self):
         tmp = self.head
